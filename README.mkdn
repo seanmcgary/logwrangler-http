@@ -1,0 +1,22 @@
+## Install
+
+``` shell
+npm install --save logwrangler logwrangler-http
+```
+
+## Use
+
+``` javascript
+var logwrangler = require('logwrangler');
+var logwranglerHttp = require('logwrangler-http');
+
+var logger = logwrangler.create();
+
+logger.use(new logwranglerHttp({
+	host: 'localhost',
+	port: 80,
+	secure: false, 			// optional
+	headers: {} 			// optional
+}))
+
+```
