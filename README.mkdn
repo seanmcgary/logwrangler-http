@@ -17,6 +17,6 @@ logger.use(new logwranglerHttp({
 	port: 80,
 	secure: false, 			// optional
 	headers: {} 			// optional
+	batchSize: 5 			// optional - by default, logs will be batched together to save on requests
 }))
-
 ```
