@@ -9,6 +9,7 @@ server.use(bodyParser());
 
 server.post('/log', function(req, res){
 	console.log(req.body);
+	console.log(req.headers);
 	res.send(200);
 });
 
@@ -19,7 +20,8 @@ setTimeout(function(){
 
 	logger.use(new logwranglerHttp({
 		host: 'localhost',
-		port: 8000
+		port: 8000,
+		authToken: 'example-token'
 	}));
 
 	logger.log({
